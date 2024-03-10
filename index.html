@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>EppsNL - MC Webtools</title>
+    <link rel="icon" type="image/png" id="favicon" href="img/favicon2024_shading.png" />
+    <link rel="stylesheet" href="css/styles.css">
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet"> 
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<meta charset="utf-8">
+</head>
+
+<body>
+<div class="root">
+<h1>MC Webtools</h1>
+		<!-- coordinate converter -->
+		<div class="grid">
+            <div class="box">
+				<h2>Coordinates Converter</h2>
+				<table class="converttable">
+				<thead>
+				  <tr>
+				  <td colspan="2"><h3>Overworld</h3></td>
+				  <td>&nbsp;</td>
+				  <td colspan="2"><h3>Nether</h3></td>
+				  </tr>
+				  <tr>
+					<th>X <input type="number" id="overworldX" placeholder="Overworld X" value="0" size="10"></th>
+					<th>Y <input type="number" id="overworldZ" placeholder="Overworld Z" value="0" size="10"></th>
+					<th width="20px"></th>
+					<th>X <input type="number" id="netherX" size="10"></th>
+					<th>Y <input type="number" id="netherZ" size="10"></th>
+				  </tr>
+				</thead>
+				</table>
+			</div>
+
+			<!-- Coordinates list -->
+			<div class="box">
+				<h2>Coordinate List</h2>
+				<form id="coordinatesForm">
+					<input type="text" id="itemName" required placeholder="Location name" size="38">
+					<select id="dimension" required>
+						<option value="Overworld">Overworld</option>
+						<option value="Nether">Nether</option>
+						<option value="The End">The End</option>
+					</select><br />
+					<input type="number" id="coordListX" size="10" required placeholder="X">
+					<input type="number" id="coordListY" size="10" required placeholder="Y">
+					<input type="number" id="coordListZ" size="10" required placeholder="Z">
+					
+					<button type="submit">Add Coordinate</button>
+				</form>
+				<ul id="coordinatesList"></ul>
+			</div>
+		</div>
+		
+		<!-- To Do -->
+		<div class="grid">
+            <div class="box">
+				<h3>To Do List</h3>
+					<form id="todo-form">
+						<input type="text" id="todo-input" placeholder="Enter your task">
+						<button type="submit">Add</button>
+					</form>
+					<div id="todo-list">
+						<ul id="tasks"></ul>
+						<button id="remove-checked-btn">Remove Checked Tasks</button>
+					</div>
+			</div>
+
+		<!-- Notes -->
+			<div class="box">
+				<h3>Quick Notes</h3>
+				<textarea id="noteField" rows="20"></textarea>
+			</div>
+		</div>
+    </div>
+<div class="footer">
+<p>All data is stored clientside in the browser's localstorage. | Made by and for <a href="https://epps.nl">EppsNL</a> | View spaghetti code on <a href="https://github.com/EppsNL/mc-webtools">Github</a>
+</div>
+
+<script src="js/convertcoords.js"></script>
+<script src="js/coordinateslist.js"></script>
+<script src="js/notefield.js"></script>
+<script src="js/todo.js"></script>
+</body>
+</html>
