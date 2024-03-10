@@ -38,7 +38,7 @@ h1 {
 	margin-bottom: 0px;
 	text-align: center;
 	margin-top: 0px;
-padding-top: 10px;
+	padding-top: 10px;
 }
 
 h2 {
@@ -214,4 +214,60 @@ width: 85%
 
 .footer a:hover {
 color: #FFFFEB;
+}
+
+/* Logo and tagline stuff */
+.logocontainer {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.logo {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%
+  max-width: 770px;
+}
+
+.tagline {
+	position: relative;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	left: 40vh;
+	width: 40%;
+	max-width: 250px;
+    display: block;
+   	animation: pulse 2s linear infinite;
+	z-index:99;
+}
+@media screen and (max-width: 800px) {
+    .logocontainer {
+        width: 100%;
+    }
+	.logo {
+		width: 100%;
+		max-width: 770px;
+	}
+	.tagline {
+		display:none;
+	}
+}
+
+@-webkit-keyframes "pulse" {
+	0% {
+		-webkit-transform: scale(1);
+		transform: scale(1) rotate(-15deg) translateY(-30px);
+	}
+	50% {
+	   -webkit-transform: scale(0.9);
+	   transform: scale(0.8) rotate(-15deg) translateY(-40px);
+	}
+	100% {
+		-webkit-transform: scale(1);
+	   transform: scale(1) rotate(-15deg) translateY(-30px);
+	}
 }
