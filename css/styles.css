@@ -192,6 +192,12 @@ width: 85%
     }
 }
 
+.location {
+		font-family: 'TeXGyreAdventor', sans-serif;
+		font-weight: 800;
+}
+
+
 /* noteField */
 #noteField {
 	width: 100%;
@@ -210,11 +216,15 @@ width: 85%
 }
 
 .footer a {
- color: #FFFFEB
+ color: #FFFFEB;
+ font-size: 0.9em;
 }
 
 .footer a:hover {
 color: #FFFFEB;
+font-size: 0.9em;
+text-decoration: underline;
+cursor: pointer;
 }
 
 /* Logo and tagline stuff */
@@ -271,4 +281,19 @@ color: #FFFFEB;
 		-webkit-transform: scale(1);
 	   transform: scale(1) rotate(-15deg) translateY(-30px);
 	}
+}
+
+/* seed */
+
+#seed {
+	text-align: center;
+}
+
+#seed-input-container {
+  display: none;
+}
+
+.importexport {
+	text-align: center;
+	
 }

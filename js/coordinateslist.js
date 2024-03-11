@@ -30,16 +30,19 @@ const form = document.getElementById('coordinatesForm');
         function displayCoordinates() {
             itemList.innerHTML = '';
 
-            // Retrieve coordinates from local storage and sort them by dimension
-            let coordinates = JSON.parse(localStorage.getItem('coordinates')) || [];
-            coordinates.sort((a, b) => {
-                const dimensionOrder = { "Overworld": 0, "Nether": 1, "The End": 2 };
-                return dimensionOrder[a.dimension] - dimensionOrder[b.dimension];
-            });
+    // Retrieve coordinates from local storage and sort them by dimension
+    let coordinates = JSON.parse(localStorage.getItem('coordinates')) || [];
+    coordinates.sort((a, b) => {
+        // First, sort by dimension
+        const dimensionOrder = { "Overworld": 0, "Nether": 1, "The End": 2 };
+        const dimensionSort = dimensionOrder[a.dimension] - dimensionOrder[b.dimension];
+        // If dimensions are the same, sort alphabetically by item name
+        return dimensionSort === 0 ? a.itemName.localeCompare(b.itemName) : dimensionSort;
+    });
 
             coordinates.forEach((coordinate, index) => {
                 const li = document.createElement('li');
-                li.textContent = `${coordinate.itemName} - ${coordinate.dimension} - (${coordinate.x}, ${coordinate.y}, ${coordinate.z}) `;
+                li.innerHTML = `<span class="location">${coordinate.itemName}</span> - ${coordinate.dimension} - (${coordinate.x}, ${coordinate.y}, ${coordinate.z}) `;
 
                 // Create delete button
                 const deleteBtn = document.createElement('button');

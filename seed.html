@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Local Storage Import/Export</title>
+<style>
+  /* Some basic styling for the page */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  button {
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Local Storage Import/Export</h1>
+
+<textarea id="importExportData" rows="5" cols="50"></textarea><br>
+<button onclick="exportLocalStorage()">Export</button>
+<button onclick="importLocalStorage()">Import</button>
+<button onclick="confirmClear()">Clear All Data</button>
+
+<script>
+  let confirmed = false;
+
+  function exportLocalStorage() {
+    const localStorageData = JSON.stringify(localStorage);
+    download('localStorage.json', localStorageData);
+  }
+
+  function importLocalStorage() {
+    const input = document.createElement('input');
+    input.type = 'file';
+
+    input.onchange = function(event) {
+      const file = event.target.files[0];
+      const reader = new FileReader();
+
+      reader.onload = function() {
+        const importedData = JSON.parse(reader.result);
+        for (const key in importedData) {
+          localStorage.setItem(key, importedData[key]);
+        }
+        alert('Local Storage data imported successfully!');
+      }
+
+      reader.readAsText(file);
+    };
+
+    input.click();
+  }
+
+  function confirmClear() {
+    if (!confirmed) {
+      if (confirm('This action cannot be undone. Are you sure you want to clear all data?')) {
+        confirmed = true;
+        setTimeout(() => {
+          confirmed = false;
+        }, 3000); // Reset the confirmation after 3 seconds
+      }
+    } else {
+      localStorage.clear();
+      alert('All data cleared from Local Storage!');
+      confirmed = false;
+	  location.reload()
+    }
+  }
+
+  function download(filename, text) {
+    const element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+
+    element.style.display = 'none';
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
+  }
+</script>
+
+</body>
+</html>

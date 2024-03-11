@@ -15,9 +15,25 @@
 		<img class="logo" src="img/mcwebtools_logo.png" />
 		<img class="tagline" src="img/mcwebtools_tagline.png" />
 	</div>
-		<!-- coordinate converter -->
+		<!-- Seed and coordinate converter -->
 		<div class="grid">
-            <div class="box">
+			<div class="box">
+				<div id="seed">
+					<h2>Seed</h2>
+						<div id="seed-display">
+						Current seed: <span id="seed-content">none</span>
+						<button onclick="showSeedInput()">Edit</button>
+					</div>
+					<div id="seed-input-container">
+						<h2><input type="text" id="seed-input">
+						<button onclick="editText()" placeholder="Enter your seed">Save</button></h2>
+					</div>
+					Open seed on <a href="#" id="ChunkbaseLink">Chunkbase</a> | <a href="#" id="SeederLink">Seeder</a>
+				</div>
+			</div>
+		</div>
+		<div class="grid">
+			<div class="box">
 				<h2>Coordinates Converter</h2>
 				<table class="converttable">
 				<thead>
@@ -79,12 +95,14 @@
 		</div>
     </div>
 <div class="footer">
-<p>All data is stored clientside in the browser's localstorage. | Made by and for <a href="https://epps.nl">EppsNL</a> | View spaghetti code on <a href="https://github.com/EppsNL/mc-webtools">Github</a>
+<p>All data is stored clientside in the browser's localstorage. | <a href="#" onclick="exportLocalStorage();">Export Data</a> - <a onclick="importLocalStorage()">Import Data</a> | Made by and for <a href="https://epps.nl">EppsNL</a> | View spaghetti code on <a href="https://github.com/EppsNL/mc-webtools">Github</a>
 </div>
 
 <script src="js/convertcoords.js"></script>
 <script src="js/coordinateslist.js"></script>
+<script src="js/importexport.js"></script>
 <script src="js/notefield.js"></script>
+<script src="js/seed.js"></script>
 <script src="js/todo.js"></script>
 </body>
 </html>
