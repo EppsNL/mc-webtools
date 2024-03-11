@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>EppsNL - About MC Webtools</title>
+    <link rel="icon" type="image/png" id="favicon" href="img/favicon2024_shading.png" />
+    <link rel="stylesheet" href="css/styles.css">
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet"> 
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<meta charset="utf-8">
+</head>
+
+<body>
+<div class="root">
+	<div class="logocontainer">
+		<img class="logo" src="img/mcwebtools_logo.png" />
+		<img class="tagline" src="img/mcwebtools_tagline.png" />
+	</div>
+		<!-- Seed and coordinate converter -->
+		<div class="grid">
+			<div class="box">
+				<h2>What is MC Webtools and who is it for?</h2>
+				<p>MC Webtools is a personal tool I made to simplify my Minecraft playing workflow. Instead of having multiple windows open for my notes, locations, map and portal calculations, everything I need is now accessible from a single browser window. New features may be added once I run into additional use-cases for this tool that would benefit my personal play style.</p>
+			</div>
+			<div class="box">
+				<h2>Availability and Data Policy</h2>
+				<p>Availablity of the online version is not guaranteed and I offer no support for when (not if) things break. All data is stored client-side in the browser's local storage. No data you enter gets send or stored to the webserver. To prevent accidents while cleaning your browser storage, I strongly suggest making frequent backups using the export data feature in the footer. Exported data is presented as json, which can be read through Notepad.</p>
+			</div>
+		</div>
+			<div class="box">
+		</div>
+		<div class="grid">
+			<div class="box">
+				<h2>Code? 🥺👉👈</h2>
+				<p>The spagetthi source code is <a href="https://github.com/EppsNL/mc-webtools">available on GitHub</a>. There is no need to host the files online to use this too. It's pure HTML, CSS and Javascript, meaning you open the index.html file in your browser of choice and import your data using the import function in the footer.</p>
+				<p>Feel free to use or modify the project in any way you seem fit. If you end up making a better version, which ou likely will, please send me a DM so I can use your version instead of my cobbled together mess.</p>
+			</div>
+			<div class="box">
+				<h2>Mandatory Legal stuff</h2>
+				<p>If it wasn't obvious yet, please read the following statement:<br />
+				THIS IS NOT AN OFFICIAL MINECRAFT SERVICE. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.</p>
+			</div>
+		</div>
+    </div>
+	<div class="grid">
+		<div class="box">
+		<h1><a href="https://mc.epps.nl">⬅️BACK TO THE TOOL</a></h1>
+		</div>
+	</div>
+<div class="footer">
+<p><a href="https://mc.epps.nl/about.html">About MC Webtools</a> | <a href="#" onclick="exportLocalStorage();">Export Data</a> - <a onclick="importLocalStorage()">Import Data</a> | Made by and for <a href="https://epps.nl">EppsNL</a> | View spaghetti code on <a href="https://github.com/EppsNL/mc-webtools">Github</a>
+</div>
+</body>
+</html>
